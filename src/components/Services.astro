@@ -1,0 +1,107 @@
+<section class="services section" id="services">
+    <h3 class="section-subtitle">Mis <span>Servicios</span></h3>
+
+    <h2 class="section-title">Lo que hago</h2>
+
+    <div class="services-container container grid">
+        <article class="services-card">
+            <i class="ri-layout-3-line services-icon"></i>
+            <h2 class="services-title">Web Developer</h2>
+            <p class="services-description">
+              Desarrollo aplicaciones web modernas utilizando tecnologías como
+              <b>HTML</b>, <b>CSS</b> (Bootstrap y Tailwind), <b>JavaScript</b>,
+              <b>React</b> y <b>ASP.NET</b>.
+              Especializado en la implementación de sistemas seguros y
+              escalables con integración de bases de datos.
+            </p>
+        </article>
+
+        <article class="services-card">
+            <i class="ri-terminal-window-line services-icon"></i>
+            <h2 class="services-title">Software Developer</h2>
+            <p class="services-description">
+              Desarrollo de aplicaciones y APIs utilizando <b>C#</b>,
+              <b>.NET Framework</b>, y bases de datos <b>SQL</b>.
+              Experiencia en el desarrollo de aplicaciones de escritorio y web, incluyendo
+              sistemas de autenticación y operaciones CRUD.</br>
+              Utilizo <b>Entity Framework</b> para la creación de APIs.
+            </p>
+        </article>
+
+        <article class="services-card">
+            <i class="ri-database-2-line services-icon"></i>
+            <h2 class="services-title">Manejo de Base de Datos</h2>
+            <p class="services-description">
+              Administro bases de datos <b>SQL Server</b>, <b>MySQL</b> y <b>PostgreSQL</b> asegurando su
+              rendimiento, seguridad y disponibilidad. Especializado en
+              integración de bases de datos con aplicaciones <b>.NET</b> y
+              optimización de consultas y procedimientos almacenados.
+            </p>
+        </article>
+    </div>
+</section>
+
+<style>
+    .services-container {
+        row-gap: 2rem;
+        padding-block: 1rem;
+    }
+
+    .services-card {
+        text-align: center;
+        background-color: var(--container-color);
+        padding: 3rem 1.25rem;
+        border-radius: 1rem;
+        border: 2px solid var(--container-color);
+        transition: border .4s;
+    }
+
+    .services-card:hover {
+        border: 2px solid var(--first-color);
+    }
+
+    .services-icon {
+        display: block;
+        font-size: 4rem;
+        color: var(--first-color);
+        margin-bottom: .75rem;
+    }
+
+    .services-title {
+        font-size: var(--h2-font-size);
+        margin-bottom: 1.5rem;
+    }
+
+    @media screen and (max-width: 320px) {
+        .services-card {
+            padding-block: 1.5rem;
+        }
+    }
+
+    /* Medium screens */
+    @media screen and (min-width: 576px) {
+        .services-container {
+            grid-template-columns: 360px;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .services-container {
+            /* 353px */
+            grid-template-columns: repeat(1, 500px);
+        }
+    }
+
+    @media screen and (min-width: 1152px) {
+        .services-container {
+            grid-template-columns: repeat(3, 352px);
+            padding-block: 2.5rem 4rem;
+        }
+
+        .services-card {
+            padding: 3.5rem 2rem;
+        }
+    }
+
+</style>

@@ -1,0 +1,217 @@
+
+<section class="skills section" id="stack">
+    <div class="skills-container container grid">
+        <div class="skills-data">
+            <h3 class="section-subtitle">Mis <span>Habilidades</span></h3>
+
+            <h2 class="section-title">Stack</h2>
+
+            <p class="skills-description">
+              Estas son las tecnologías y librerías que utilizo.<br />
+              Constantemente busco ampliar mis conocimientos sobre las mismas e
+              incorporar nuevas. </br>
+              Aparte de las tecnologías, poseo experiencia trabajando en equipo con
+              <b>Metodologías Agiles (SCRUM)</b>.
+            </p>
+
+            <a href="#projects" class="button">Ver Proyectos</a>
+        </div>
+
+        <div class="skills-content">
+            <ul class="skills-group">
+              <li class="skills-item">
+                <img src="/skills/net.png" width="100" />
+              </li>
+              <li class="skills-item">
+                <img src="/skills/sqlserver.png" width="100" />
+              </li>
+              <li class="skills-item">
+                <img src="/skills/mysql.png" width="100" />
+              </li>
+              <li class="skills-item">
+                <div class="tooltip-container">
+                  <img src="/skills/postgresql.png" width="100" />
+                  <p class="tooltip-text">PostgreSQL</p>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="skills-group">
+              <li class="skills-item">
+                <img src="/skills/html.png" width="100" />
+              </li>
+              <li class="skills-item">
+                <div class="tooltip-container">
+                  <img src="/skills/css.png" width="100" />
+                  <p class="tooltip-text">Cascading Style Sheets</p>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="tooltip-container">
+                  <img src="/skills/js.png" width="100" />
+                  <p class="tooltip-text">JavaScript</p>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="tooltip-container">
+                  <img src="/skills/react.png" width="100" />
+                  <p class="tooltip-text">React</p>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="skills-group">
+              <li class="skills-item">
+                <div class="tooltip-container">
+                  <img src="/skills/bootstrap.png" width="100" />
+                  <p class="tooltip-text">Bootstrap</p>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="tooltip-container">
+                  <img src="/skills/tailwind.png" width="100" />
+                  <p class="tooltip-text">Tailwind</p>
+                </div>
+              </li>
+              <li class="skills-item">
+                <img src="/skills/git.png" width="100" />
+              </li>
+              <li class="skills-item">
+                <div class="tooltip-container">
+                  <img src="/skills/docker.png" width="100" />
+                  <p class="tooltip-text">Docker</p>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="skills-group">
+              <li class="skills-item">
+                <div class="tooltip-container">
+                  <img src="/skills/figma.png" width="100" />
+                  <p class="tooltip-text">Figma</p>
+                </div>
+              </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+  .skills {
+    background-color: var(--container-color);
+  }
+
+  .skills-container {
+    padding-bottom: 2rem;
+    row-gap: 3.5rem;
+  }
+
+  .skills-data {
+    text-align: center;
+  }
+
+  .skills-description {
+    margin-bottom: 2rem;
+  }
+
+  .skills-content,
+  .skills-group {
+    display: grid;
+  }
+
+  .skills-content {
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 5rem;
+    justify-content: center;
+    align-items: baseline;
+    background-color: var(--body-color);
+    border-radius: 20%;
+    padding-block: 2rem;
+  }
+
+  .skills-group {
+    row-gap: 1rem;
+    justify-self: center;
+    flex-wrap: wrap;
+  }
+
+  .skills-item img, .skills-item p {
+    animation: levitate 2s ease-in-out infinite;
+  }
+
+  @keyframes levitate {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .skills-content {
+      grid-template-columns: max-content;
+      row-gap: 1rem;
+    }
+  }
+
+  /* Medium screens */
+  @media screen and (min-width: 576px) {
+    .skills-container {
+      grid-template-columns: 360px;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .skills-container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+
+    .skills-data,
+    :is(.skills-data) :is(.section-subtitle, .section-title) {
+      text-align: initial;
+    }
+
+  }
+  /* Large Screens */
+  @media screen and (min-width: 1023px) {
+    .skills-content {
+      row-gap: 3rem;
+      grid-template-columns: repeat(1, max-content);
+    }
+
+    .skills-group {
+      row-gap: 1.5rem;
+      display: flex;
+    }
+  }
+
+  @media screen and (min-width: 1152px) {
+    .skills-container {
+      grid-template-columns: 340px 425px;
+      column-gap: 10rem;
+      padding-bottom: 4rem;
+    }
+
+    .skills-description {
+      margin-bottom: 3rem;
+    }
+
+    .skills-content {
+      row-gap: 3rem;
+      grid-template-columns: repeat(1, max-content);
+      width: 110%;
+    }
+
+    .skills-group {
+      row-gap: 1.5rem;
+      display: flex;
+    }
+
+    .skills-item {
+      font-size: var(--h3-font-size);
+    }
+  }
+</style>

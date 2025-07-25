@@ -1,0 +1,218 @@
+---
+---
+
+<header class="header" id="header">
+    <nav class="nav container">
+        <a href="#" class="nav-logo">
+            Juan <span>Colapaolo <i class="ri-code-s-slash-line"></i></span
+        ></a>
+
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#about" class="nav-link active-link">Sobre mí</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#stack" class="nav-link">Stack</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+
+            <!-- Close button -->
+            <div class="nav-close" id="nav-close">
+                <i class="ri-close-line"></i>
+            </div>
+        </div>
+
+        <!-- Toggler close -->
+        <div class="nav-toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+        </div>
+      </nav>
+</header>
+
+
+
+<script is:inline>
+    const navMenu = document.getElementById("nav-menu");
+    const navToggler = document.getElementById("nav-toggle");
+    const navClose = document.getElementById("nav-close");
+    
+    // Show menu
+    if (navToggler) {
+        navToggler.addEventListener("click", () => {
+            navMenu?.classList.add("show-menu")
+        })
+    }
+    
+    // Close the menu
+    if (navClose) {
+        navClose.addEventListener("click", () => {
+            navMenu?.classList.remove("show-menu")
+        })
+    }
+    
+    //--------------Close navbar menu by clicking on a link------------------
+    const navLink = document.querySelectorAll(".nav-link");
+    
+    const linkAction = () => {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu?.classList.remove("show-menu");
+    }
+    navLink.forEach(n => n.addEventListener("click", linkAction));
+    
+    // Add blur to navbar while scrolling
+    const blurHeader = () => {
+        const header = document.getElementById("header");
+        // Applies the class when scroll exceedes 50 vh
+        if (header) {
+            window.scrollY >= 50
+                ? header.classList.add("blur-header")
+                : header.classList.remove("blur-header");
+        }
+    }
+    window.addEventListener("scroll", blurHeader);
+
+</script>
+
+
+<style>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--container-color);
+        z-index: var(--z-fixed);
+    }
+
+    .nav {
+        height: var(--header-height);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-logo {
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+    }
+
+    .nav-logo span {
+        color: var(--first-color);
+    }
+
+    .nav-toggle,
+    .nav-close {
+        display: flex;
+        font-size: 1.25rem;
+        color: var(--title-color);
+        cursor: pointer;
+    }
+
+    @media screen and (max-width:1023px) {
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            background-color: hsla(0, 0%, 10%, .3);
+            width: 75%;
+            height: 100%;
+            padding: 4.5rem 0 0 3rem;
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px); /*For Safari*/
+            transition: right .4s;
+        }
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+
+    .nav-link {
+        color: var(--title-color);
+        font-weight: var(--font-medium);
+        transition: color .4s;
+    }
+
+    .nav-link:hover {
+        color: var(--first-color);
+    }
+
+    .nav-close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+    }
+
+    /* Show Navbar Menu (JS) */
+    .show-menu {
+        right: 0;
+    }
+
+    /* Navbar blur while scrolling */
+    .blur-header {
+        background-color: transparent;
+    }
+
+    .blur-header::after {
+        content: '';
+        position: absolute;
+        width: 1000%;
+        height: 100%;
+        background-color: hsla(0, 0%, 10%, .3);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px); /*For safari*/
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    /* Active link (JS) */
+    .active-link {
+        color: var(--first-color);
+    }
+
+
+    @media screen and (min-width: 768px) {
+        .nav-menu {
+            width: 55%;
+        }
+    }
+    /* Large Screens */
+    @media screen and (min-width: 1023px) {
+        .nav {
+            height: calc(var(--header-height) + 1.5rem);
+        }
+
+        .nav-close,
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-list {
+            flex-direction: row;
+            column-gap: 3rem;
+        }
+
+        .nav-menu {
+            width: initial;
+        }
+
+        .blur-header::after {
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px); /*For Safari*/
+        }
+    }
+
+</style>

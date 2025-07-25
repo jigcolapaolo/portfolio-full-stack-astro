@@ -1,0 +1,115 @@
+<section class="contact section" id="contact">
+    <h3 class="section-subtitle">Trabajemos <span>Juntos</span></h3>
+
+    <h2 class="section-title">Contáctame</h2>
+
+    <div class="contact-container container grid">
+        <form action="" class="contact-form" id="contact-form">
+            <div class="contact-group">
+              <input
+                type="text"
+                name="user-name"
+                required
+                placeholder="Ingresa tu Nombre"
+                class="contact-input"
+              />
+              <input
+                type="email"
+                name="user-email"
+                required
+                placeholder="Ingresa tu Email"
+                class="contact-input"
+              />
+            </div>
+
+            <textarea
+              name="user-project"
+              required
+              placeholder="Ingresa tu Mensaje"
+              class="contact-input"
+            ></textarea>
+            <p class="contact-message" id="contact-message"></p>
+            <button type="submit" class="button contact-button">
+              Enviar Mensaje
+            </button>
+        </form>
+    </div>
+</section>
+
+<style>
+    .contact-container {
+        padding-top: 1rem;
+    }
+
+    .contact-form,
+    .contact-group {
+        display: grid;
+        row-gap: 1rem;
+    }
+
+    .contact-form {
+        position: relative;
+    }
+
+    .contact-input {
+        padding: 1rem 1.25rem;
+        border-radius: .5rem;
+        background-color: var(--container-color);
+        color: var(--title-color);
+    }
+
+    .contact-input::placeholder {
+        color: var(--text-color);
+    }
+
+    .contact-form textarea {
+        height: 11rem;
+        resize: none;
+        margin-bottom: 2rem;
+    }
+
+    .contact-button {
+        justify-self: center;
+        cursor: pointer;
+    }
+
+    .contact-message {
+        position: absolute;
+        left: 0;
+        bottom: 4.5rem;
+        font-size: var(--small-font-size);
+        color: var(--title-color);
+    }
+
+    /* Medium screens */
+    @media screen and (min-width: 576px) {
+        .contact-container {
+            grid-template-columns: 360px;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (min-width: 1152px) {
+        .contact-container {
+            grid-template-columns: 680px;
+            padding-block: 2.5rem 2rem;
+        }
+
+        .contact-form {
+            row-gap: 1.5rem;
+        }
+
+        .contact-group {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 1.5rem;
+        }
+
+        .contact-input {
+            padding: 1.5rem;
+        }
+
+        .contact-form textarea {
+            height: 20rem;
+        }
+    }
+</style>

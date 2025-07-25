@@ -1,0 +1,42 @@
+---
+import "../styles/global.css"
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
+			rel="stylesheet"
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<title>Juan Colapaolo Portfolio</title>
+	</head>
+
+	<body>
+		<slot />
+		<script src="/scripts/scrollreveal.min.js" is:inline></script>
+	</body>
+</html>
+	
+
+
+<script is:inline>
+	const sr = ScrollReveal({
+		origin: "top",
+		distance: "60px",
+		duration: 1000,
+		delay: 50,
+		// reset: true 
+	})
+
+	sr.reveal(`.hero-data, .hero-social, .contact-container, .footer-container`)
+	sr.reveal(`.hero-image`, { origin: "bottom" })
+	sr.reveal(`.about-data, .skills-data`, { origin: "left" })
+	sr.reveal(`.about-image, .skills-content`, { origin: "right" })
+	sr.reveal(`.services-card, .projects-card`, { interval: 100 })
+</script>
+
